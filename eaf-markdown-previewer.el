@@ -88,6 +88,14 @@
   ""
   :type 'string)
 
+(defun eaf--markdown-preview-display (buf)
+  "Given BUF, split window to show file and previewer."
+  (eaf-split-preview-windows
+   (buffer-local-value
+    'eaf--buffer-url buf))
+  (switch-to-buffer buf)
+  (other-window +1))
+
 (provide 'eaf-markdown-previewer)
 
 ;;; eaf-markdown-previewer.el ends here
