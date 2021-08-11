@@ -1,0 +1,21 @@
+{
+    "pacman":[
+        "python-markdown"
+	],
+    "apt": [
+        "python3-markdown"
+    ],
+    "dnf": [
+        "python3-markdown"
+    ],
+    "pip": {
+        "linux": [
+            "retrying"
+        ],
+        "win32": [
+            "retrying",
+            "markdown"
+        ]
+    },
+    "npm_install": true
+}
