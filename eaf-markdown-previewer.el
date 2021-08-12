@@ -201,7 +201,7 @@
 (setq eaf-markdown-previewer-path (concat (file-name-directory load-file-name) "buffer.py"))
 (add-to-list 'eaf-app-module-path-alist '("markdown-previewer" . eaf-markdown-previewer-path))
 
-(add-to-list 'eaf-app-display-function-alist '("markdown-previewer" . eaf--markdown-preview-display))
+(add-to-list 'eaf-preview-display-function-alist '("markdown-previewer" . eaf--markdown-preview-display))
 
 (add-to-list 'eaf-app-extensions-alist '("markdown-previewer" . eaf-markdown-extension-list))
 
