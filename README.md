@@ -4,3 +4,9 @@
 </p>
 
 Markdown Previewer application for the [Emacs Application Framework](https://github.com/emacs-eaf/emacs-application-framework).
+
+### Dependency List
+
+| Package         | Description      |
+| :--------       | :------          |
+| python-markdown | Markdown preview |
