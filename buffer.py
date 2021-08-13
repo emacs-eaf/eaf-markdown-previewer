@@ -52,8 +52,14 @@ class AppBuffer(BrowserBuffer):
                                                             "node_modules",
                                                             "darkreader",
                                                             "darkreader.js")).read()
-        
+
         self.draw_progressbar = True
+
+        # Check puml code and Java is installed.
+        with open(url) as f:
+            import shutil
+            if "```puml" in f.read() and shutil.which("java") is None:
+                message_to_emacs("Have PlantUML code in file '{}', you need to install Java to preview normally.".format(url))
 
         self.run_render_server()
         self.render()
