@@ -48,6 +48,11 @@ class AppBuffer(BrowserBuffer):
             (get_emacs_var("eaf-markdown-dark-mode") == "follow" and get_emacs_var("eaf-emacs-theme-mode") == "dark")):
             self.dark_mode = "true"
 
+        self.buffer_widget.dark_mode_js = open(os.path.join(os.path.dirname(__file__),
+                                                            "node_modules",
+                                                            "darkreader",
+                                                            "darkreader.js")).read()
+        
         self.draw_progressbar = True
 
         self.run_render_server()
