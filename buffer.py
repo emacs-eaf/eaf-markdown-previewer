@@ -43,9 +43,10 @@ class AppBuffer(BrowserBuffer):
         self.render_js = os.path.join(os.path.dirname(__file__), "render.js")
         self.server_port = get_free_port()
         self.dark_mode = "false"
-        if (get_emacs_var("eaf-markdown-dark-mode") == "force" or \
-            get_emacs_var("eaf-markdown-dark-mode") == True or \
-            (get_emacs_var("eaf-markdown-dark-mode") == "follow" and get_emacs_var("eaf-emacs-theme-mode") == "dark")):
+        dark_mode = get_emacs_var("eaf-markdown-dark-mode")
+        if (dark_mode == "force" or \
+            dark_mode == True or \
+            (dark_mode == "follow" and self.theme_mode == "dark")):
             self.dark_mode = "true"
 
         self.buffer_widget.dark_mode_js = open(os.path.join(os.path.dirname(__file__),
