@@ -17,7 +17,7 @@
     },
     "homepage": "https://github.com/emacs-eaf/emacs-application-framework#readme",
     "dependencies": {
-        "@shd101wyy/mume": "^0.6.7",
+        "@shd101wyy/mume": "^0.6.8",
         "darkreader": "^4.9.34"
     }
 }
