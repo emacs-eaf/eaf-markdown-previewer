@@ -15,6 +15,15 @@ Markdown Previewer application for the [Emacs Application Framework](https://git
 (require 'eaf-markdown-previewer)
 ```
 
+### Invoking/Using
+
+To use this previewer, which will open a preview of an markdown file as HTML, run:
+
+`M-x eaf-open`
+
+Then select the markdown file you want to preview.  This information is also available on the [EAF Repo Readme](https://github.com/emacs-eaf/emacs-application-framework#launch-eaf-applications)
+
+
 ### Dependency List
 
 | Package         | Description      |
