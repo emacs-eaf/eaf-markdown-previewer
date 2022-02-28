@@ -1,21 +1,24 @@
 {
-    "pacman":[
-        "python-markdown"
-	],
-    "apt": [
-        "python3-markdown"
+  "pacman":[
+    "python-markdown"
+  ],
+  "emerge": [
+    "dev-python/markdown"
+  ],
+  "apt": [
+    "python3-markdown"
+  ],
+  "dnf": [
+    "python3-markdown"
+  ],
+  "pip": {
+    "linux": [
+      "retrying"
     ],
-    "dnf": [
-        "python3-markdown"
-    ],
-    "pip": {
-        "linux": [
-            "retrying"
-        ],
-        "win32": [
-            "retrying",
-            "markdown"
-        ]
-    },
-    "npm_install": true
+    "win32": [
+      "retrying",
+      "markdown"
+    ]
+  },
+  "npm_install": true
 }
