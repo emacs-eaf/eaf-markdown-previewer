@@ -24,7 +24,7 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QUrl, QFileSystemWatcher, QTimer
 from retrying import retry
 from core.webengine import BrowserBuffer
-from core.utils import get_free_port, message_to_emacs, eval_in_emacs, get_emacs_var
+from core.utils import get_free_port, message_to_emacs, eval_in_emacs, get_emacs_var, get_app_dark_mode
 from urllib.error import URLError
 from urllib.request import urlopen
 from urllib.parse import urlencode
@@ -42,12 +42,7 @@ class AppBuffer(BrowserBuffer):
         self.preview_file = tempfile.mkstemp(prefix='eaf-', suffix='.html', text=True)[1]
         self.render_js = os.path.join(os.path.dirname(__file__), "render.js")
         self.server_port = get_free_port()
-        self.dark_mode = "false"
-        dark_mode = get_emacs_var("eaf-markdown-dark-mode")
-        if (dark_mode == "force" or \
-            dark_mode == True or \
-            (dark_mode == "follow" and self.theme_mode == "dark")):
-            self.dark_mode = "true"
+        self.dark_mode = get_app_dark_mode("eaf-markdown-dark-mode")
 
         self.buffer_widget.dark_mode_js = open(os.path.join(os.path.dirname(__file__),
                                                             "node_modules",
@@ -84,7 +79,7 @@ class AppBuffer(BrowserBuffer):
         params = {
             "input_file": self.url,
             "output_file": self.preview_file,
-            "dark_mode": self.dark_mode
+            "dark_mode": str(self.dark_mode).lower()
         }
         url = 'http://localhost:{}?{}'.format(self.server_port, urlencode(params))
         with urlopen(url) as f:
