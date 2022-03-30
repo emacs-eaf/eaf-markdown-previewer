@@ -44,11 +44,8 @@ class AppBuffer(BrowserBuffer):
         self.server_port = get_free_port()
         self.dark_mode = get_app_dark_mode("eaf-markdown-dark-mode")
 
-        self.buffer_widget.dark_mode_js = open(os.path.join(os.path.dirname(__file__),
-                                                            "node_modules",
-                                                            "darkreader",
-                                                            "darkreader.js")).read()
-
+        self.buffer_widget.init_dark_mode_js(__file__)
+        
         self.draw_progressbar = True
 
         # Check puml code and Java is installed.
