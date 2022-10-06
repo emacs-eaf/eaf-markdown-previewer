@@ -3,7 +3,7 @@
   <img width="800" src="./screenshot.png">
 </p>
 
-Markdown Previewer application for the [Emacs Application Framework](https://github.com/emacs-eaf/emacs-application-framework).
+Markdown Previewer application for the [Emacs Application Framework](https://github.com/emacs-eaf/emacs-application-framework), it's compatible with Github style, supports the rendering of Mermaid, Plantuml, Katex, Mathjax, etc.
 
 ### Load application
 
@@ -124,4 +124,3 @@ Then select the markdown file you want to preview.  This information is also ava
 | `<f5>` | refresh_page |
 | `<f12>` | open_devtools |
 | `<C-return>` | eaf-send-ctrl-return-sequence |
-
