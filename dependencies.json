@@ -13,9 +13,14 @@
   ],
   "pip": {
     "linux": [
-      "retrying"
+      "retrying",
+      "markdown"
     ],
     "win32": [
+      "retrying",
+      "markdown"
+    ],
+    "darwin": [
       "retrying",
       "markdown"
     ]
