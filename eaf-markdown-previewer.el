@@ -115,7 +115,6 @@
     ("M-q" . "clear_cookies")
     ("C-t" . "toggle_password_autofill")
     ("C-d" . "save_page_password")
-    ("M-a" . "toggle_adblocker")
     ("C-M-q" . "clear_history")
     ("C-M-i" . "import_chrome_history")
     ("M-v" . "scroll_down_page")
