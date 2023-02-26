@@ -20,11 +20,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from PyQt6 import QtCore
-from PyQt6.QtCore import QUrl, QFileSystemWatcher, QTimer
+from PyQt6.QtCore import QUrl, QFileSystemWatcher
 from retrying import retry
 from core.webengine import BrowserBuffer
-from core.utils import get_free_port, message_to_emacs, eval_in_emacs, get_emacs_var, get_app_dark_mode
+from core.utils import get_free_port, message_to_emacs, eval_in_emacs, get_app_dark_mode
 from urllib.error import URLError
 from urllib.request import urlopen
 from urllib.parse import urlencode
