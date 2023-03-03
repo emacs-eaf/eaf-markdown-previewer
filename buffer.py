@@ -23,7 +23,7 @@
 from PyQt6.QtCore import QUrl, QFileSystemWatcher
 from retrying import retry
 from core.webengine import BrowserBuffer
-from core.utils import get_free_port, message_to_emacs, eval_in_emacs, get_app_dark_mode
+from core.utils import get_free_port, message_to_emacs, eval_in_emacs, get_app_dark_mode, interactive
 from urllib.error import URLError
 from urllib.request import urlopen
 from urllib.parse import urlencode
@@ -86,3 +86,8 @@ class AppBuffer(BrowserBuffer):
                     eval_in_emacs('eaf-activate-emacs-window', [])
             else:
                 message_to_emacs("preview failed: {}".format(resp))
+
+    @interactive
+    def update_theme(self):
+        self.dark_mode = get_app_dark_mode("eaf-markdown-dark-mode")
+        self.render()
