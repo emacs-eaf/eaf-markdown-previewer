@@ -15,14 +15,11 @@ Markdown Previewer application for the [Emacs Application Framework](https://git
 (require 'eaf-markdown-previewer)
 ```
 
-### Invoking/Using
+### Using
 
-To use this previewer, which will open a preview of an markdown file as HTML, run:
+`M-x eaf-open` , select the markdown file you want to preview, preview will update when markdown file save.
 
-`M-x eaf-open`
-
-Then select the markdown file you want to preview.  This information is also available on the [EAF Repo Readme](https://github.com/emacs-eaf/emacs-application-framework#launch-eaf-applications)
-
+If you want preview update in real-time when you changed markdown buffer, you need install my another plugin [auto-save](https://github.com/manateelazycat/auto-save)
 
 ### Dependency List
 
