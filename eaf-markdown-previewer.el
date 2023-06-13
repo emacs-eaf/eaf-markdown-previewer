@@ -195,6 +195,12 @@
   (switch-to-buffer buf)
   (other-window +1))
 
+(defun eaf-markdown-previewer-open (&optional file)
+  (interactive)
+  (eaf--open-internal (or file (buffer-file-name)) "markdown-previewer" "")
+  ;; We need call `eaf-monitor-configuration-change' to force EAF render view.
+  (eaf-monitor-configuration-change))
+
 (add-to-list 'eaf-app-binding-alist '("markdown-previewer" . eaf-markdown-previewer-keybinding))
 
 (setq eaf-markdown-previewer-path (concat (file-name-directory load-file-name) "buffer.py"))
