@@ -20,17 +20,19 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from PyQt6.QtCore import QUrl, QFileSystemWatcher
-from retrying import retry
-from core.webengine import BrowserBuffer
-from core.utils import get_free_port, message_to_emacs, eval_in_emacs, get_app_dark_mode, interactive
-from urllib.error import URLError
-from urllib.request import urlopen
-from urllib.parse import urlencode
 import os
 import platform
 import subprocess
 import tempfile
+from urllib.error import URLError
+from urllib.parse import urlencode
+from urllib.request import urlopen
+
+from core.utils import eval_in_emacs, get_app_dark_mode, get_free_port, interactive, message_to_emacs
+from core.webengine import BrowserBuffer
+from PyQt6.QtCore import QFileSystemWatcher, QUrl
+from retrying import retry
+
 
 class AppBuffer(BrowserBuffer):
 
@@ -44,7 +46,7 @@ class AppBuffer(BrowserBuffer):
         self.dark_mode = get_app_dark_mode("eaf-markdown-dark-mode")
 
         self.buffer_widget.init_dark_mode_js(__file__)
-        
+
         self.draw_progressbar = True
 
         # Check puml code and Java is installed.
