@@ -28,7 +28,7 @@ from urllib.error import URLError
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
-from core.utils import eval_in_emacs, get_app_dark_mode, get_free_port, interactive, message_to_emacs
+from core.utils import PostGui, eval_in_emacs, get_app_dark_mode, get_free_port, interactive, message_to_emacs
 from core.webengine import BrowserBuffer
 from PyQt6.QtCore import QFileSystemWatcher, QUrl
 from retrying import retry
@@ -66,6 +66,7 @@ class AppBuffer(BrowserBuffer):
         args = ["node", self.render_js, str(self.server_port)]
         subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=False)
 
+    @PostGui()
     def on_file_changed(self, *args):
         self.render()
 
