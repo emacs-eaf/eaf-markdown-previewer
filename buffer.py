@@ -80,7 +80,7 @@ class AppBuffer(BrowserBuffer):
             "output_file": self.preview_file,
             "dark_mode": str(self.dark_mode).lower()
         }
-        url = 'http://localhost:{}?{}'.format(self.server_port, urlencode(params))
+        url = 'http://127.0.0.1:{}?{}'.format(self.server_port, urlencode(params))
         with urlopen(url) as f:
             resp = f.read().decode("utf-8")
             if resp == "ok":
